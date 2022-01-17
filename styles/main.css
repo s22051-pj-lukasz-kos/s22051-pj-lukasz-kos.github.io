@@ -1,27 +1,134 @@
 @charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 100%;
+}
+
+* body main {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  padding: 2rem;
+}
+
+* body main h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+* body main h3 {
+  font-size: 1.5rem;
+}
+
+* body main p {
+  font-size: 1rem;
+}
+
+* body main .img-description {
+  font-size: 0.75rem;
+  color: #a6a6a6;
+  margin-left: 1rem;
+}
+
+* body main button {
+  margin: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 10px;
+}
+
+* body main input {
+  margin: 0.5rem 0rem;
+}
+
+* body main .radioInput {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25px 1fr;
+      grid-template-columns: 25px 1fr;
+  margin: 0.5rem 0rem;
+}
+
+* body main .radioInput input {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+}
+
+* body main .radioInput label {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+* body main table {
+  margin: 0.5rem 0rem 1rem 0rem;
+  text-align: center;
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+* body main table th {
+  padding: 0.25rem;
+}
+
+* body main table thead > tr {
+  background-color: #a6a6a6;
+  color: white;
+}
+
+* body main table tbody tr {
+  padding: 10rem;
+}
+
+* body main table tbody tr > th {
+  background-color: #cccccc;
+}
+
+* body main table tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
 #katomierz {
   border: 1px solid black;
   /*
   NOTE:
   * to poniżej odpowiada za skalowanie płótna z zachowaniem proporcji, NIE ZMIENIAĆ!
   */
+  max-width: 100%;
+}
+
+.active {
+  background-color: #a6a6a6;
+  color: white;
+}
+
+ul.navbar {
+  display: -ms-grid;
+  display: grid;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   width: 100%;
+  background-color: #f1f1f1;
 }
 
-/* hamburger menu */
-/* ikona domyślnie nie jest widoczna */
-nav .ham {
-  display: none;
+ul.navbar li {
+  text-align: center;
 }
 
-/* dla małych ekranów ikona jest domyślnie widoczna */
-@media screen and (max-width: 768px) {
-  nav a {
-    display: none;
-  }
-  nav .ham {
-    display: block;
-    width: auto;
-  }
+ul.navbar li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+ul.navbar li a:hover {
+  background-color: #555;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */

@@ -6,175 +6,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="scripts/jquery-3.6.0.min.js"></script>
     <script src="scripts/second.js" defer></script>
     <title>Kątomierz do gramofonu (protractor)</title>
   </head>
   <body>
-    <!-- miejsce na navbar 
-            - wyjaśnienie o co chodzi z kątomierzem do gramofonu
-            - formularz do generatora 
-            - wyjaśnienie jak zrobić wymagane pomiary 
-            - słowniczek
-    -->
-    <nav>
-      <img class="ham" src="outline_menu_white_24dp.png" alt="" />
-      <a href="index.html" class="myLinks">Wstęp</a>
-      <a href="form.html" class="myLinks">Generator</a>
-      <a href="measure.html" class="myLinks">Pomiary</a>
-      <a href="glossary.html" class="myLinks">Słowniczek</a>
-    </nav>
-    <!-- Hamburger -->
-    <a href="javascript:void(0);" class="icon" onclick="hamburger()"> 
-    
-    </a>
+    <!-- navbar -->
+    <ul class="navbar">
+      <li><a href="index.html" id="indexLink" class="navLinks">Wstęp</a></li>
+      <li><a href="form.html" id="formLink" class="navLinks">Generator</a></li>
+      <li>
+        <a href="measure.html" id="measureLink" class="navLinks">Pomiary</a>
+      </li>
+      <li>
+        <a href="glossary.html" id="glossLink" class="navLinks">Słowniczek</a>
+      </li>
+    </ul>
 
-    <!-- wyjaśnienie o co chodzi z kątomierzem do gramofonu -->
-    <h1>Kątomierz do gramofonu (protractor)</h1>
-    <h3>Wstęp</h3>
-    <p>
-      Kątomierz do gramofonu to szablon do ustawiania pozycji wkładki
-      gramofonowej w ramieniu gramofonu. Jego celem jest optymalizacja
-      odtwarzania płyt gramofonowych, bowiem analogowe odtwarzanie muzyki wiąże
-      się z występowaniem szeregów zjawisk, które mogą wpłynąć na odtwarzanie
-      zniekształconej lub przesterowanej muzyki. W skrajnych przypadkach źle
-      ustawiona igła gramofonowa może nawet wypadać ze ścieżki w miarę zbliżania
-      się do środka płyty gramofonowej!
-    </p>
-    <p>
-      Nie ma jednego, uniwersalnego szablonu do ustawiania wkładek. Wygląd
-      kątomierza zależy od kombinacji gramofon + ramię i jego poszczególnych
-      parametrów. Ponadto wygląd kątomierza zależy od celów tego ustawienia.
-    </p>
-    <h3>Dlaczego istnieje szereg ustawień wkładki gramofonowej?</h3>
-    <p>
-      Analogowe odtwarzanie muzyki wiąże się z występowaniem szeregu zjawisk
-      fizycznych, które mogą zniekształcić odtwarzany dźwięk. Jednakże nawet dla
-      konkretnego gramofonu o ściśle określonych parametrach istnieje kilka
-      sposobów na ustawienie wkładki gramofonowej.
-    </p>
-    <p>
-      Głównym powodem dlaczego istnieje szereg metod na ustawienie wkładki
-      gramofonowej jest fakt, że igła nie porusza się w sposób optymalny po
-      płycie gramofonowej.
-    </p>
-    <p>
-      Aby idealnie odtwarzać dźwięk z płyty gramofonowej wkładka musiałaby
-      poruszać się w linii prostopadłej do ścieżki zapisu. Ale tak się nie
-      dzieje, ponieważ wkładka porusza się po okręgu, zawieszona na ramieniu. W
-      takim przypadku,
-      <strong
-        >igła jest ustawiona równolegle do ścieżki jedynie w dwóch miejscach na
-        stronie płyty</strong
-      >.
-    </p>
-    <p>
-      Próba bezpośredniego rozwiązania tego problemu generuje szereg własnych.
-    </p>
-    <p>
+    <main>
+      <!-- wyjaśnienie o co chodzi z kątomierzem do gramofonu -->
+      <h1>Kątomierz do gramofonu (protractor)</h1>
+      <h3>Wstęp</h3>
+      <p>
+        Kątomierz do gramofonu to szablon do ustawiania pozycji wkładki
+        gramofonowej w ramieniu gramofonu. Jego celem jest optymalizacja
+        odtwarzania płyt gramofonowych, bowiem analogowe odtwarzanie muzyki
+        wiąże się z występowaniem szeregów zjawisk, które mogą wpłynąć na
+        odtwarzanie zniekształconej lub przesterowanej muzyki. W skrajnych
+        przypadkach źle ustawiona igła gramofonowa może nawet wypadać ze ścieżki
+        w miarę zbliżania się do środka płyty gramofonowej!
+      </p>
+      <p>
+        Nie ma jednego, uniwersalnego szablonu do ustawiania wkładek. Wygląd
+        kątomierza zależy od kombinacji gramofon + ramię i jego poszczególnych
+        parametrów. Ponadto wygląd kątomierza zależy od celów tego ustawienia.
+      </p>
+      <h3>Dlaczego istnieje szereg ustawień wkładki gramofonowej?</h3>
+      <p>
+        Analogowe odtwarzanie muzyki wiąże się z występowaniem szeregu zjawisk
+        fizycznych, które mogą zniekształcić odtwarzany dźwięk. Jednakże nawet
+        dla konkretnego gramofonu o ściśle określonych parametrach istnieje
+        kilka sposobów na ustawienie wkładki gramofonowej.
+      </p>
+      <p>
+        Głównym powodem dlaczego istnieje szereg metod na ustawienie wkładki
+        gramofonowej jest fakt, że igła nie porusza się w sposób optymalny po
+        płycie gramofonowej.
+      </p>
+      <p>
+        Aby idealnie odtwarzać dźwięk z płyty gramofonowej wkładka musiałaby
+        poruszać się w linii prostopadłej do ścieżki zapisu. Ale tak się nie
+        dzieje, ponieważ wkładka porusza się po okręgu, zawieszona na ramieniu.
+        W takim przypadku,
+        <strong
+          >igła jest ustawiona równolegle do ścieżki jedynie w dwóch miejscach
+          na stronie płyty</strong
+        >.
+      </p>
+      <p>
+        Próba bezpośredniego rozwiązania tego problemu generuje szereg własnych.
+      </p>
+
       <img
+        class="two-images-1"
         src="images/dlugie_ramie.jpg"
         alt="Kompromis, który zajmuje dużo miejsca."
       />
-    </p>
-    <p class="img-description">Kompromis, który zajmuje dużo miejsca.</p>
-    <p>
-      <img src="images/suwnica.jpg" alt="Kosztowne rozwiązanie problemu." />
-    </p>
-    <p class="img-description">Kosztowne rozwiązanie problemu.</p>
-    <p>
-      I właśnie dlatego istnieje szereg ustawień wkładki gramofonowej, które
-      starają się rozwiązać ten sam problem z różnych perspektyw.
-    </p>
-    <h3>Typy ustawień</h3>
-    <p>
-      Wyróżniamy trzy główne rodzaje ustawień wkładki gramofonowej w zależności
-      od celu ustawienia:
-    </p>
-    <ul>
-      <li>
-        <strong>Baerwald</strong> - maksymalne zniekształcenie (przester) jest
-        najmniejsze w tym ustawieniu, a co za tym idzie również maksymalne
-        wychylenie od stycznej ścieżki jest najmniejsze w tym ustawieniu.
-      </li>
-      <li>
-        <strong>Loefgren</strong> - średnia kwadratowa zniekształceń (RMS) jest
-        najmniejsza dla tych ustawień.
-      </li>
-      <li>
-        <strong>Stevenson</strong> - jako, że igła jest najbardziej podatna na
-        zniekształcenia na końcu zapisu to zminimalizujmy je dla tego punktu jak
-        tylko się da. Innymi słowy: wewnętrzny punkt zerowy znajduje się na
-        ostatniej ścieżce płyty.
-      </li>
-    </ul>
-    <p>
-      Jak można się domyślić, założenia są osiągane na wskutek różnych
-      odległości “<strong>punktów zerowych</strong>”. Czym są punkty zerowe? Już
-      wiesz - są to właśnie te dwa miejsca na stronie płyty, gdzie igła jest
-      ustawiona równolegle do ścieżki.
-    </p>
-    <p>
-      Dla poszczególnych ustawień punkty zerowe są liczone od środka talerza
-      gramofonu i wyglądają następująco:
-    </p>
-    <ul>
-      <li>Baerwald: 66.0 oraz 120.9 mm</li>
-      <li>Loefgren: 70.3 oraz 116.6 mm</li>
-      <li>Stevenson: 60.325 oraz 117.42 mm</li>
-    </ul>
-    <p>
-      Dobra, a co z tego właściwie wynika? Jeśli nie wiesz jakie ustawienia
-      wybrać to wybierz Baerwalda, ponieważ jest najpopularniejszy i nie bez
-      powodu. Stevenson, tak dla twojej informacji, jest praktycznie
-      niespotykany. Loefgrena używaj tylko, jeśli wiesz, że twój gramofon został
-      stworzony z myślą o takim ustawieniu.
-    </p>
-    <h3>
-      Ale przecież dostałem <em>protractor</em> od producenta, dlaczego miałbym
-      tworzyć własny?
-    </h3>
-    <p>
-      Ponieważ kątomierze dostarczane przez producenta nie pozwalają na dokładne
-      ustawienie gramofonu (wszelkie kątomierze liniowe) albo są zwyczajnie
-      błędne!
-    </p>
-    <p>
-      Ponadto musisz mieć świadomość, że dane dostarczane przez producenta
-      gramofonu również bywają błędne i nie można na nich polegać tworząc
-      jakikolwiek kątomierz. I właśnie z tą myślą napisałem tą stronę, by
-      wytłumaczyć tobie:
-    </p>
-    <ul>
-      <li>dlaczego dokładne ustawienie gramofonu jest ważne,</li>
-      <li>jak dokonać niezbędnych pomiarów,</li>
-      <li>wygenerować parametry twojego gramofonu,</li>
-      <li>wygenerować kątomierz łukowy dopasowany pod twój gramofon.</li>
-    </ul>
-    <img
-      src="images/heybrook_protractor.jpg"
-      alt="Wbrew pozorom takim kątomierzem nie ustawisz dokładnie gramofonu."
-    />
-    <p class="img-description">
-      Wbrew pozorom takim kątomierzem nie ustawisz dokładnie gramofonu.
-    </p>
+      <p class="img-description">Kompromis, który zajmuje dużo miejsca.</p>
+      <img
+        class="two-images-1"
+        src="images/suwnica.jpg"
+        alt="Kosztowne rozwiązanie problemu."
+      />
+      <p class="img-description">Kosztowne rozwiązanie problemu.</p>
 
-    <p>
-      Temat znasz już pobieżnie, ale to wystarczy do tego, by
-      <a href="form.html">stworzyć swój własny kątomierz do gramofonu.</a>
-    </p>
-    <p>
-      Mimo wszystko, jeśli chciałbyś zgłębić temat dalej to będziesz musiał
-      pogrzebać przede wszystkim w angielskich źródłach, bowiem polskie źródła
-      albo pochodzą z książek z lat 60-tych, albo jeśli są współczesne to
-      niestety najczęściej natrafisz na audiofilski bełkot. Dlatego warto zacząć
-      <a href="glossary.html">tutaj</a> i dalej pogrzebać samemu na angielskich
-      stronach.
-    </p>
-    <p>
-      Jednak w pierwszej kolejności będziesz potrzebować dokładnej odległości
-      montażowej między osią obrotu ramienia gramofonu, a osią obrotu talerza
-      gramofonu (trzpieniem). Tą odległość, jak praktyka pokazuje, niestety
-      <a href="measure.html">będziesz musiał wyznaczyć sam.</a>
-    </p>
+      <p>
+        I właśnie dlatego istnieje szereg ustawień wkładki gramofonowej, które
+        starają się rozwiązać ten sam problem z różnych perspektyw.
+      </p>
+      <h3>Typy ustawień</h3>
+      <p>
+        Wyróżniamy trzy główne rodzaje ustawień wkładki gramofonowej w
+        zależności od celu ustawienia:
+      </p>
+      <ul>
+        <li>
+          <strong>Baerwald</strong> - maksymalne zniekształcenie (przester) jest
+          najmniejsze w tym ustawieniu, a co za tym idzie również maksymalne
+          wychylenie od stycznej ścieżki jest najmniejsze w tym ustawieniu.
+        </li>
+        <li>
+          <strong>Loefgren</strong> - średnia kwadratowa zniekształceń (RMS)
+          jest najmniejsza dla tych ustawień.
+        </li>
+        <li>
+          <strong>Stevenson</strong> - jako, że igła jest najbardziej podatna na
+          zniekształcenia na końcu zapisu to zminimalizujmy je dla tego punktu
+          jak tylko się da. Innymi słowy: wewnętrzny punkt zerowy znajduje się
+          na ostatniej ścieżce płyty.
+        </li>
+      </ul>
+      <p>
+        Jak można się domyślić, założenia są osiągane na wskutek różnych
+        odległości “<strong>punktów zerowych</strong>”. Czym są punkty zerowe?
+        Już wiesz - są to właśnie te dwa miejsca na stronie płyty, gdzie igła
+        jest ustawiona równolegle do ścieżki.
+      </p>
+      <p>
+        Dla poszczególnych ustawień punkty zerowe są liczone od środka talerza
+        gramofonu i wyglądają następująco:
+      </p>
+      <ul>
+        <li>Baerwald: 66.0 oraz 120.9 mm</li>
+        <li>Loefgren: 70.3 oraz 116.6 mm</li>
+        <li>Stevenson: 60.325 oraz 117.42 mm</li>
+      </ul>
+      <p>
+        Dobra, a co z tego właściwie wynika? Jeśli nie wiesz jakie ustawienia
+        wybrać to wybierz Baerwalda, ponieważ jest najpopularniejszy i nie bez
+        powodu. Stevenson, tak dla twojej informacji, jest praktycznie
+        niespotykany. Loefgrena używaj tylko, jeśli wiesz, że twój gramofon
+        został stworzony z myślą o takim ustawieniu.
+      </p>
+      <h3>
+        Ale przecież dostałem <em>protractor</em> od producenta, dlaczego
+        miałbym tworzyć własny?
+      </h3>
+      <p>
+        Ponieważ kątomierze dostarczane przez producenta nie pozwalają na
+        dokładne ustawienie gramofonu (wszelkie kątomierze liniowe) albo są
+        zwyczajnie błędne!
+      </p>
+      <p>
+        Ponadto musisz mieć świadomość, że dane dostarczane przez producenta
+        gramofonu również bywają błędne i nie można na nich polegać tworząc
+        jakikolwiek kątomierz. I właśnie z tą myślą napisałem tą stronę, by
+        wytłumaczyć tobie:
+      </p>
+      <ul>
+        <li>dlaczego dokładne ustawienie gramofonu jest ważne,</li>
+        <li>jak dokonać niezbędnych pomiarów,</li>
+        <li>wygenerować parametry twojego gramofonu,</li>
+        <li>wygenerować kątomierz łukowy dopasowany pod twój gramofon.</li>
+      </ul>
+      <img
+        class="one-image"
+        src="images/heybrook_protractor.jpg"
+        alt="Wbrew pozorom takim kątomierzem nie ustawisz dokładnie gramofonu."
+      />
+      <p class="img-description">
+        Wbrew pozorom takim kątomierzem nie ustawisz dokładnie gramofonu.
+      </p>
+
+      <p>
+        Temat znasz już pobieżnie, ale to wystarczy do tego, by
+        <a href="form.html">stworzyć swój własny kątomierz do gramofonu.</a>
+      </p>
+      <p>
+        Mimo wszystko, jeśli chciałbyś zgłębić temat dalej to będziesz musiał
+        pogrzebać przede wszystkim w angielskich źródłach, bowiem polskie źródła
+        albo pochodzą z książek z lat 60-tych, albo jeśli są współczesne to
+        niestety najczęściej natrafisz na audiofilski bełkot. Dlatego warto
+        zacząć
+        <a href="glossary.html">tutaj</a> i dalej pogrzebać samemu na
+        angielskich stronach.
+      </p>
+      <p>
+        Jednak w pierwszej kolejności będziesz potrzebować dokładnej odległości
+        montażowej między osią obrotu ramienia gramofonu, a osią obrotu talerza
+        gramofonu (trzpieniem). Tą odległość, jak praktyka pokazuje, niestety
+        <a href="measure.html">będziesz musiał wyznaczyć sam.</a>
+      </p>
+    </main>
   </body>
 </html>

@@ -1,24 +1,116 @@
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 100%;
+  body {
+    main {
+      display: grid;
+      width: 100%;
+      padding: 2rem;
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .img-description {
+        font-size: 0.75rem;
+        color: #a6a6a6;
+        margin-left: 1rem;
+      }
+
+      button {
+        margin: 0.5rem;
+        padding: 0.25rem;
+        border-radius: 10px;
+      }
+
+      input {
+        margin: 0.5rem 0rem;
+      }
+
+      .radioInput {
+        display: grid;
+        grid-template-columns: 25px 1fr;
+        margin: 0.5rem 0rem;
+        input {
+          grid-column: 1/2;
+        }
+        label {
+          grid-column: 2/3;
+        }
+      }
+
+      table {
+        margin: 0.5rem 0rem 1rem 0rem;
+        text-align: center;
+        th {
+          padding: 0.25rem;
+        }
+        thead > tr {
+          background-color: #a6a6a6;
+          color: white;
+        }
+        tbody {
+          tr {
+            padding: 10rem;
+          }
+          tr > th {
+            background-color: #cccccc;
+          }
+          tr:nth-child(even) {
+            background-color: #f1f1f1;
+          }
+        }
+
+        width: 100%;
+        border: 1px solid black;
+        border-collapse: collapse;
+        overflow-x: auto;
+      }
+    }
+  }
+}
+
 #katomierz {
   border: 1px solid black;
   /*
   NOTE:
   * to poniżej odpowiada za skalowanie płótna z zachowaniem proporcji, NIE ZMIENIAĆ!
   */
-  width: 100%;
+  max-width: 100%;
 }
 
-/* hamburger menu */
-/* ikona domyślnie nie jest widoczna */
-nav .ham {
-  display: none;
+.active {
+  background-color: #a6a6a6;
+  color: white;
 }
-/* dla małych ekranów ikona jest domyślnie widoczna */
-@media screen and (max-width: 768px) {
-  nav a {
-    display: none;
-  }
-  nav .ham {
-    display: block;
-    width: auto;
+
+ul.navbar {
+  display: grid;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  li {
+    text-align: center;
+    a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+    a:hover {
+      background-color: #555;
+      color: white;
+    }
   }
 }

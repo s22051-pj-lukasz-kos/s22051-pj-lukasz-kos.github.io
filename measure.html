@@ -5,91 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+    <script src="scripts/second.js" defer></script>
     <title>Kątomierz do gramofonu</title>
   </head>
   <body>
-    <!-- miejsce na navbar 
-            - wyjaśnienie o co chodzi z kątomierzem do gramofonu
-            - formularz do generatora 
-            - wyjaśnienie jak zrobić wymagane pomiary 
-            - słowniczek 
-    -->
-    <nav>
-      <img class="ham" src="outline_menu_white_24dp.png" alt="" />
-      <a href="index.html" class="myLinks">Wstęp</a>
-      <a href="form.html" class="myLinks">Generator</a>
-      <a href="measure.html" class="myLinks">Pomiary</a>
-      <a href="glossary.html" class="myLinks">Słowniczek</a>
-    </nav>
-    <!-- wyjaśnienie jak zrobić wymagane pomiary -->
-    <h1>Dlaczego muszę zmierzyć odległość montażową samemu?</h1>
-    <p>
-      Ponieważ bardzo często producenci olewają dokonywanie jakichkolwiek
-      pomiarów swoich urządzeń i dane podawane przez producenta bardzo często są
-      niekompletne i niedokładne. Co więcej nie raz czytałem o kątomierzach
-      łukowych dostarczanych przez producentów, którymi nie można było ustawić
-      wkładki gramofonowej. Jak się później okazywało, były to kopie kątomierzy
-      z gramofonów o zupełnie innych parametrach innych producentów!
-    </p>
-    <p>
-      Dlatego właśnie aby zapewnić sobie najwyższą możliwą jakość dźwięku
-      odtwarzania to należy w pierwszej kolejności zmierzyć niezbędne parametry
-      i wyliczyć pozostałe do wydrukowania naszego własnego, customowego
-      kątomierza.
-    </p>
+    <!-- navbar -->
+    <ul class="navbar">
+      <li><a href="index.html" id="indexLink" class="navLinks">Wstęp</a></li>
+      <li><a href="form.html" id="formLink" class="navLinks">Generator</a></li>
+      <li>
+        <a href="measure.html" id="measureLink" class="navLinks">Pomiary</a>
+      </li>
+      <li>
+        <a href="glossary.html" id="glossLink" class="navLinks">Słowniczek</a>
+      </li>
+    </ul>
 
-    <p>
-      Na potrzeby mojego generatora wystarczy, że zmierzysz odległość montażową.
-      Z dokładnością do 1 miejsca po przecinku.
-    </p>
-    <h3>Co to jest odległość montażowa?</h3>
-    <p>
-      Jest to odległość między osią obrotu ramienia gramofonu, a osią obrotu
-      talerza gramofonu (trzpienia).
-    </p>
-    <h3>Jak wyznaczyć odległość montażową?</h3>
-    <p>
-      Będziesz potrzebować telefonu z dobrym aparatem o wysokiej rozdzielczości,
-      linijkę kreślarską dobrej jakości oraz prawdopodobnie jakieś narzędzia do
-      rozkręcenia ramienia gramofonu.
-    </p>
-    <p>
-      Cały myk polega na umieszczeniu linijki na talerzu gramofonu w taki
-      sposób, że będziemy w stanie dokładnie zmierzyć odległość przy pomocy
-      zdjęcia z aparatu i dowolnego programu graficznego, który umożliwia nam
-      mierzenie odległości w prostej linii (nawet IrfanView to potrafi).
-    </p>
-    <p>Posłużę się przykładem tego zdjęcia.</p>
-    <img
-      src="images/pomiary.jpg"
-      alt="Odległość montażowa gramofonu mierzona linijką"
-    />
-    <p>
-      W tym konkretnym przypadku aby dokładnie zmierzyć odległość montażową
-      musiałem zdemontować ramię gramofonu, aby widzieć śrubę łożyska,
-      wyznaczającą środek obrotu ramienia.
-    </p>
-    <p>
-      Najpierw mierzymy 30cm na linijce i odczytujemy odległość w pikselach
-      zdjęcia.
-    </p>
-    <p>
-      Potem mierzymy odległość montażową i odczytujemy odległość w pikselach.
-    </p>
-    <p>
-      Następnie robimy to co w szkole: mnożymy oba porównania na krzyż i szukamy
-      odległości montażowej w mm. Czyli w tym przypadku otrzymamy iloczyn 300
-      [mm] i odległości montażowej w pikselach dzielone przez odległość 30cm w
-      pikselach.
-    </p>
-    <p>
-      Jeśli będziemy wystarczająco dokładni to pozwoli nam na obliczenie
-      odległości montażowej z dokładnością do 1/10 mm.
-    </p>
+    <main>
+      <!-- wyjaśnienie jak zrobić wymagane pomiary -->
+      <h1>Dlaczego muszę zmierzyć odległość montażową samemu?</h1>
+      <p>
+        Ponieważ bardzo często producenci olewają dokonywanie jakichkolwiek
+        pomiarów swoich urządzeń i dane podawane przez producenta bardzo często
+        są niekompletne i niedokładne. Co więcej nie raz czytałem o kątomierzach
+        łukowych dostarczanych przez producentów, którymi nie można było ustawić
+        wkładki gramofonowej. Jak się później okazywało, były to kopie
+        kątomierzy z gramofonów o zupełnie innych parametrach innych
+        producentów!
+      </p>
+      <p>
+        Dlatego właśnie aby zapewnić sobie najwyższą możliwą jakość dźwięku
+        odtwarzania to należy w pierwszej kolejności zmierzyć niezbędne
+        parametry i wyliczyć pozostałe do wydrukowania naszego własnego,
+        customowego kątomierza.
+      </p>
 
-    <p>
-      Gdy już się uporamy z pomiarami oraz z obliczeniami to pora przejść do
-      samego <a href="form.html">generatora kątomierza.</a>
-    </p>
+      <p>
+        Na potrzeby mojego generatora wystarczy, że zmierzysz odległość
+        montażową. Z dokładnością do 1 miejsca po przecinku.
+      </p>
+      <h3>Co to jest odległość montażowa?</h3>
+      <p>
+        Jest to odległość między osią obrotu ramienia gramofonu, a osią obrotu
+        talerza gramofonu (trzpienia).
+      </p>
+      <h3>Jak wyznaczyć odległość montażową?</h3>
+      <p>
+        Będziesz potrzebować telefonu z dobrym aparatem o wysokiej
+        rozdzielczości, linijkę kreślarską dobrej jakości oraz prawdopodobnie
+        jakieś narzędzia do rozkręcenia ramienia gramofonu.
+      </p>
+      <p>
+        Cały myk polega na umieszczeniu linijki na talerzu gramofonu w taki
+        sposób, że będziemy w stanie dokładnie zmierzyć odległość przy pomocy
+        zdjęcia z aparatu i dowolnego programu graficznego, który umożliwia nam
+        mierzenie odległości w prostej linii (nawet IrfanView to potrafi).
+      </p>
+      <p>Posłużę się przykładem tego zdjęcia.</p>
+      <img
+        src="images/pomiary.jpg"
+        alt="Odległość montażowa gramofonu mierzona linijką"
+      />
+      <p>
+        W tym konkretnym przypadku aby dokładnie zmierzyć odległość montażową
+        musiałem zdemontować ramię gramofonu, aby widzieć śrubę łożyska,
+        wyznaczającą środek obrotu ramienia.
+      </p>
+      <p>
+        Najpierw mierzymy 30cm na linijce i odczytujemy odległość w pikselach
+        zdjęcia.
+      </p>
+      <p>
+        Potem mierzymy odległość montażową i odczytujemy odległość w pikselach.
+      </p>
+      <p>
+        Następnie robimy to co w szkole: mnożymy oba porównania na krzyż i
+        szukamy odległości montażowej w mm. Czyli w tym przypadku otrzymamy
+        iloczyn 300 [mm] i odległości montażowej w pikselach dzielone przez
+        odległość 30cm w pikselach.
+      </p>
+      <p>
+        Jeśli będziemy wystarczająco dokładni to pozwoli nam na obliczenie
+        odległości montażowej z dokładnością do 1/10 mm.
+      </p>
+
+      <p>
+        Gdy już się uporamy z pomiarami oraz z obliczeniami to pora przejść do
+        samego <a href="form.html">generatora kątomierza.</a>
+      </p>
+    </main>
   </body>
 </html>

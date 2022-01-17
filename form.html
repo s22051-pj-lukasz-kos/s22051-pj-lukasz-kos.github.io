@@ -9,98 +9,98 @@
     <script src="scripts/jquery-3.6.0.min.js"></script>
 
     <script defer src="scripts/main.js"></script>
+    <script defer src="scripts/second.js"></script>
 
     <title>Kątomierz do gramofonu</title>
   </head>
   <body>
-    <!-- miejsce na navbar 
-            - wyjaśnienie o co chodzi z kątomierzem do gramofonu
-            - formularz do generatora 
-            - wyjaśnienie jak zrobić wymagane pomiary 
-            - słowniczek
-    -->
-    <nav>
-      <img class="ham" src="outline_menu_white_24dp.png" alt="" />
-      <a href="index.html" class="myLinks">Wstęp</a>
-      <a href="form.html" class="myLinks">Generator</a>
-      <a href="measure.html" class="myLinks">Pomiary</a>
-      <a href="glossary.html" class="myLinks">Słowniczek</a>
-    </nav>
-    <!-- formularz (generator) -->
+    <!-- navbar -->
+    <ul class="navbar">
+      <li><a href="index.html" id="indexLink" class="navLinks">Wstęp</a></li>
+      <li><a href="form.html" id="formLink" class="navLinks">Generator</a></li>
+      <li><a href="measure.html" id="measureLink" class="navLinks">Pomiary</a></li>
+      <li><a href="glossary.html" id="glossLink" class="navLinks">Słowniczek</a></li>
+    </ul>
+    <main>
+      <!-- formularz (generator) -->
       <label for="inputMountDist"
-        >Odległość montażowa (mounting distance) [mm]</label
+      >Odległość montażowa (mounting distance) [mm]</label
       >
       <input type="number" name="inputMountDist" id="inputMountDist"  step="0.1" min="150" max="500" value="200.5" autofocus />
       <p id="inputMessageField"></p>
       <legend>Typ kątomierza</legend>
-      <input type="radio" name="radioProtrac" id="radioBaer" checked/>
-      <label for="radioBaer">Baerwald</label>
-      <input type="radio" name="radioProtrac" id="radioLoef" />
-      <label for="radioLoef">Loefgren</label>
-      <input type="radio" name="radioProtrac" id="radioSteven" />
-      <label for="radioSteven">Stevenson</label>
-    
+      <div class="radioInput">
+        <input type="radio" name="radioProtrac" id="radioBaer" checked/>
+        <label for="radioBaer">Baerwald</label>
+        <input type="radio" name="radioProtrac" id="radioLoef" />
+        <label for="radioLoef">Loefgren</label>
+        <input type="radio" name="radioProtrac" id="radioSteven" />
+        <label for="radioSteven">Stevenson</label>
+      </div>
+      
       <!-- <input type="submit" value="Generuj dane i kątomierz"> -->
       <button id="formBtn" type="button">Generuj dane i kątomierz</button>
 
-    <!-- link do wyjaśnienia jak zrobić wymagane pomiary(measure.html) -->
+      <!-- link do wyjaśnienia jak zrobić wymagane pomiary(measure.html) -->
 
-    <!-- tabela wyliczająca ustawienia  -->
-    <table>
+      <!-- tabela wyliczająca ustawienia  -->
+      <table>
       <thead>
-        <tr>
-          <th>Parametr</th>
-          <th>Baerwald</th>
-          <th>Loefgren</th>
-          <th>Stevenson</th>
-        </tr>
+      <tr>
+        <th>Parametr</th>
+        <th>Baerwald</th>
+        <th>Loefgren</th>
+        <th>Stevenson</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <th><dfn title="Odległość między osią obrotu ramienia gramofonu, a osią obrotu talerza gramofonu.">Odległość montażowa [mm]</dfn></th>
-          <td id="baerMountingDistance"></td>
-          <td id="loefMountingDistance"></td>
-          <td id="stevMountingDistance"></td>
-        </tr>
-        <tr>
-          <th><dfn title="Odległość między osią obrotu ramienia gramofonu, a dowolnym z punktów zerowych.">Odległość skuteczna [mm]</dfn></th>
-          <td id="baerEffectiveLength"></td>
-          <td id="loefEffectiveLength"></td>
-          <td id="stevEffectiveLength"></td>
-        </tr>
-        <tr>
-          <th><dfn title="Różnica między odległością montażową, a odległością skuteczną.">Przewieszenie [mm]</dfn></th>
-          <td id="baerOverhang"></td>
-          <td id="loefOverhang"></td>
-          <td id="stevOverhang"></td>
-        </tr>
-        <tr>
-          <th><dfn title="Kąt pomiędzy linią biegnącą od igły do osi obrotu ramienia, a osią równoległą do wkładki gramofonowej.">Kąt przegięcia [&deg]</dfn> </th>
-          <td id="baerOffsetAngle"></td>
-          <td id="loefOffsetAngle"></td>
-          <td id="stevOffsetAngle"></td>
-        </tr>
-        <tr>
-          <th><dfn title="Najkrótsza odległość pomiędzy dwiema równoległymi liniami: jedna jest równoległa do wkładki gramofonowej i przechodzi przez igłę, a druga przechodzi przez punkt obrotu ramienia.">Przesunięcie liniowe [mm]</dfn></th>
-          <td id="baerLinearOffset"></td>
-          <td id="loefLinearOffset"></td>
-          <td id="stevLinearOffset"></td>
-        </tr>
-        <tr>
-          <th><dfn title="Punkt bliżej osi talerza gramofonu, dla którego igła jest równolegle ustawiona do rowka.">Wewnętrzny punkt zerowy [mm]</dfn></th>
-          <td id="baerInnerNullPoint"></td>
-          <td id="loefInnerNullPoint"></td>
-          <td id="stevInnerNullPoint"></td>
-        </tr>
-        <tr>
-          <th><dfn title="Punkt dalej od osi talerza gramofonu, dla którego igła jest równolegle ustawiona do rowka">Zewnętrzny punkt zerowy [mm]</dfn></td>
-          <td id="baerOuterNullPoint"></td>
-          <td id="loefOuterNullPoint"></td>
-          <td id="stevOuterNullPoint"></td>
-        </tr>
+      <tr>
+        <th><dfn title="Odległość między osią obrotu ramienia gramofonu, a osią obrotu talerza gramofonu.">Odległość montażowa [mm]</dfn></th>
+        <td id="baerMountingDistance"></td>
+        <td id="loefMountingDistance"></td>
+        <td id="stevMountingDistance"></td>
+      </tr>
+      <tr>
+        <th><dfn title="Odległość między osią obrotu ramienia gramofonu, a dowolnym z punktów zerowych.">Odległość skuteczna [mm]</dfn></th>
+        <td id="baerEffectiveLength"></td>
+        <td id="loefEffectiveLength"></td>
+        <td id="stevEffectiveLength"></td>
+      </tr>
+      <tr>
+        <th><dfn title="Różnica między odległością montażową, a odległością skuteczną.">Przewieszenie [mm]</dfn></th>
+        <td id="baerOverhang"></td>
+        <td id="loefOverhang"></td>
+        <td id="stevOverhang"></td>
+      </tr>
+      <tr>
+        <th><dfn title="Kąt pomiędzy linią biegnącą od igły do osi obrotu ramienia, a osią równoległą do wkładki gramofonowej.">Kąt przegięcia [&deg]</dfn> </th>
+        <td id="baerOffsetAngle"></td>
+        <td id="loefOffsetAngle"></td>
+        <td id="stevOffsetAngle"></td>
+      </tr>
+      <tr>
+        <th><dfn title="Najkrótsza odległość pomiędzy dwiema równoległymi liniami: jedna jest równoległa do wkładki gramofonowej i przechodzi przez igłę, a druga przechodzi przez punkt obrotu ramienia.">Przesunięcie liniowe [mm]</dfn></th>
+        <td id="baerLinearOffset"></td>
+        <td id="loefLinearOffset"></td>
+        <td id="stevLinearOffset"></td>
+      </tr>
+      <tr>
+        <th><dfn title="Punkt bliżej osi talerza gramofonu, dla którego igła jest równolegle ustawiona do rowka.">Wewnętrzny punkt zerowy [mm]</dfn></th>
+        <td id="baerInnerNullPoint"></td>
+        <td id="loefInnerNullPoint"></td>
+        <td id="stevInnerNullPoint"></td>
+      </tr>
+      <tr>
+        <th><dfn title="Punkt dalej od osi talerza gramofonu, dla którego igła jest równolegle ustawiona do rowka">Zewnętrzny punkt zerowy [mm]</dfn></td>
+        <td id="baerOuterNullPoint"></td>
+        <td id="loefOuterNullPoint"></td>
+        <td id="stevOuterNullPoint"></td>
+      </tr>
       </tbody>
-    </table>
+      </table>
 
-    <canvas id="katomierz" width="2000" height="1250"></canvas>
+      <canvas id="katomierz" width="2000" height="1250"></canvas>
+    </main>
+   
   </body>
 </html>
