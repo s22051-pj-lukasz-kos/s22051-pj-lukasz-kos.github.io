@@ -36,6 +36,7 @@ $(() => {
 
   // zmienna zawierająca współrzędne trzpienia
   const spindle = new Coordinates(400, 800);
+  // zmienna zawierająca współrzędne osi obrotu ramienia gramofonu
   let armPivot = new Coordinates(400, undefined);
 
   // klasa do wyszukiwania współrzędnych punktów zerowych

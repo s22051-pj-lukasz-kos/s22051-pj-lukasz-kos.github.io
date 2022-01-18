@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="author" content="Łukasz Kos" />
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="styles/main.css" />
 
@@ -12,17 +14,20 @@
     <title>Kątomierz do gramofonu (protractor)</title>
   </head>
   <body>
-    <!-- navbar -->
-    <ul class="navbar">
-      <li><a href="index.html" id="indexLink" class="navLinks">Wstęp</a></li>
-      <li><a href="form.html" id="formLink" class="navLinks">Generator</a></li>
-      <li>
-        <a href="measure.html" id="measureLink" class="navLinks">Pomiary</a>
-      </li>
-      <li>
-        <a href="glossary.html" id="glossLink" class="navLinks">Słowniczek</a>
-      </li>
-    </ul>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html" id="indexLink" class="navLinks">Wstęp</a></li>
+        <li>
+          <a href="form.html" id="formLink" class="navLinks">Generator</a>
+        </li>
+        <li>
+          <a href="measure.html" id="measureLink" class="navLinks">Pomiary</a>
+        </li>
+        <li>
+          <a href="glossary.html" id="glossLink" class="navLinks">Słowniczek</a>
+        </li>
+      </ul>
+    </nav>
 
     <main>
       <!-- wyjaśnienie o co chodzi z kątomierzem do gramofonu -->
@@ -67,19 +72,22 @@
       <p>
         Próba bezpośredniego rozwiązania tego problemu generuje szereg własnych.
       </p>
+      <div class="images">
+        <figure>
+          <img
+            src="images/dlugie_ramie.jpg"
+            alt="Kompromis, który zajmuje dużo miejsca."
+          />
+          <br />
+          <figcaption>Kompromis, który zajmuje dużo miejsca.</figcaption>
+        </figure>
 
-      <img
-        class="two-images-1"
-        src="images/dlugie_ramie.jpg"
-        alt="Kompromis, który zajmuje dużo miejsca."
-      />
-      <p class="img-description">Kompromis, który zajmuje dużo miejsca.</p>
-      <img
-        class="two-images-1"
-        src="images/suwnica.jpg"
-        alt="Kosztowne rozwiązanie problemu."
-      />
-      <p class="img-description">Kosztowne rozwiązanie problemu.</p>
+        <figure>
+          <img src="images/suwnica.jpg" alt="Kosztowne rozwiązanie problemu." />
+          <br />
+          <figcaption>Kosztowne rozwiązanie problemu.</figcaption>
+        </figure>
+      </div>
 
       <p>
         I właśnie dlatego istnieje szereg ustawień wkładki gramofonowej, które
@@ -150,14 +158,17 @@
         <li>wygenerować parametry twojego gramofonu,</li>
         <li>wygenerować kątomierz łukowy dopasowany pod twój gramofon.</li>
       </ul>
-      <img
-        class="one-image"
-        src="images/heybrook_protractor.jpg"
-        alt="Wbrew pozorom takim kątomierzem nie ustawisz dokładnie gramofonu."
-      />
-      <p class="img-description">
-        Wbrew pozorom takim kątomierzem nie ustawisz dokładnie gramofonu.
-      </p>
+
+      <figure>
+        <img
+          src="images/heybrook_protractor.jpg"
+          alt="Wbrew pozorom takim kątomierzem nie ustawisz dokładnie gramofonu."
+        />
+        <br />
+        <figcaption>
+          Wbrew pozorom takim kątomierzem nie ustawisz dokładnie gramofonu.
+        </figcaption>
+      </figure>
 
       <p>
         Temat znasz już pobieżnie, ale to wystarczy do tego, by
